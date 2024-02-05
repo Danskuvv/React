@@ -1,7 +1,8 @@
 import {MediaItem} from '../types/DBtypes';
 // src/components/MediaRow.tsx
-const MediaRow = (props: {item: MediaItem}) => {
-  const {item} = props;
+
+const MediaRow = (props: {item: MediaItem, setSelectedItem: (item: MediaItem) => void}) => {
+  const {item, setSelectedItem} = props;
   return (
     <tr className="media-row">
       <td>
@@ -12,8 +13,12 @@ const MediaRow = (props: {item: MediaItem}) => {
       <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
+      <td>
+        <button onClick={() => setSelectedItem(item)}>Select</button>
+      </td>
     </tr>
   );
 };
+
 
 export default MediaRow;

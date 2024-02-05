@@ -1,7 +1,9 @@
 import {MediaItem} from '../types/DBtypes';
-import MediaRow from './Mediarow';
+import {useState} from 'react';
+import MediaRow from './MediaRow';
+import SingleView from './SingleView';
 const Home = () => {
-
+  const [selectedItem, setSelectedItem] = useState<MediaItem | null>(null); // adjust the initial state according to your needs
   const mediaArray: MediaItem[] = [
     {
       media_id: 8,
@@ -41,6 +43,7 @@ const Home = () => {
   return (
     <>
       <h2>My Media</h2>
+      {selectedItem && <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />}
       <table>
         <thead>
           <tr>
@@ -53,12 +56,15 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-        {mediaArray.map((item) => (
-    <MediaRow key={item.media_id} item={item} />
-  ))}
+          {mediaArray.map((item) => (
+            <MediaRow key={item.media_id} item={item} setSelectedItem={setSelectedItem} />
+          ))}
         </tbody>
       </table>
+
     </>
   );
 };
 export default Home;
+
+
