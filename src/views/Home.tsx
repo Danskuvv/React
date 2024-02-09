@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <>
       <h2>My Media</h2>
-      {selectedItem && <SingleView item={selectedItem} setSelectedItem={setSelectedItem} />}
+      {selectedItem && <SingleView item={selectedItem} setSelectedItem={(item: MediaItem | undefined) => setSelectedItem(item || null)} />}
       <table>
         <thead>
           <tr>

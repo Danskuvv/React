@@ -21,7 +21,7 @@ const SingleView = (props: {
 
   return (
     <dialog open>
-      <button onClick={() => setSelectedItem(null)}>Close</button>
+      <button onClick={() => setSelectedItem(undefined)}>Close</button>
       <table>
         <tbody>
           <tr>
