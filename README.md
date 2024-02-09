@@ -1,4 +1,4 @@
-[Open website]([url](https://users.metropolia.fi/~danielvv/hybrid-week-3/))
+Open [website](https://users.metropolia.fi/~danielvv/hybrid-week3/) to view it in the browser.
 
 # React + TypeScript + Vite
 
