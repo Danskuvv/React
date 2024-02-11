@@ -1,12 +1,12 @@
-import {MediaItem, MediaItemWithOwner} from '../types/DBTypes';
-import {useEffect, useState} from 'react';
+import {MediaItemWithOwner} from '../types/DBTypes';
+import {useState} from 'react';
 import MediaRow from '../components/MediaRow';
 import SingleView from '../components/SingleView';
-import { fetchData } from '../functions';
+import { useMedia } from '../hooks/apiHooks';
 const Home = () => {
   const [selectedItem, setSelectedItem] = useState<MediaItemWithOwner | null>(null); // adjust the initial state according to your needs
 
-  const [mediaArray, setMediaArray] = useState<MediaItemWithOwner[]>([]);
+
 
 
   /*
@@ -27,24 +27,9 @@ const Home = () => {
  console.log(mediaArray);
  */
 //_______________________________________________________
-  const getMediaWithOwners = async () => {
-    try {
-      const mediaItems = await fetchData<MediaItem[]>(`${import.meta.env.VITE_MEDIA_API}/media`);
-      const mediaItemsWithOwners: Promise<MediaItemWithOwner>[] = mediaItems.map(async (item) => {
-        const userData = await fetchData<{ username: string }>(`${import.meta.env.VITE_AUTH_API}/users/${item.user_id}`);
-        return { ...item, username: userData.username };
-      });
-      const result = await Promise.all(mediaItemsWithOwners);
-      console.log(result); // Log the array of media items with owners
-      setMediaArray(result);
-    } catch (error) {
-      console.error('getMediaWithOwners', error);
-    }
-  };
 
-  useEffect(() => {
-    getMediaWithOwners();
-  }, []);
+const {mediaArray} = useMedia();
+
 
 
   return (
