@@ -1,4 +1,4 @@
-Open [website](https://users.metropolia.fi/~danielvv/hooks/) to view it in the browser.
+Open [website](https://users.metropolia.fi/~danielvv/custom-hooks/) to view it in the browser.
 
 # React + TypeScript + Vite
 
