@@ -1,10 +1,10 @@
 // SingleView.tsx
 import {useEffect} from 'react';
-import {MediaItem} from '../types/DBTypes';
+import {MediaItemWithOwner} from '../types/DBTypes';
 
 const SingleView = (props: {
-  item: MediaItem;
-  setSelectedItem: (item: MediaItem | undefined) => void;
+  item: MediaItemWithOwner;
+  setSelectedItem: (item: MediaItemWithOwner | undefined) => void;
 }) => {
   const {item, setSelectedItem} = props;
 
@@ -34,6 +34,7 @@ const SingleView = (props: {
             <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
             <td>{item.filesize}</td>
             <td>{item.media_type}</td>
+            <td>{item.username}</td> {/* Render the username */}
           </tr>
         </tbody>
       </table>

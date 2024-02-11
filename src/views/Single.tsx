@@ -1,10 +1,11 @@
 import {useLocation, useNavigate} from "react-router-dom";
-import {MediaItem} from "../types/DBTypes";
+//import {MediaItem} from "../types/DBTypes";
+import {MediaItemWithOwner} from "../types/DBTypes";
 
 const Single = () => {
   const {state} = useLocation();
   const navigate = useNavigate();
-  const item: MediaItem = state.item;
+  const item: MediaItemWithOwner = state.item;
 
   return (
     <>
@@ -21,6 +22,7 @@ const Single = () => {
             <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
             <td>{item.filesize}</td>
             <td>{item.media_type}</td>
+            <td>{item.username}</td>
           </tr>
         </tbody>
       </table>

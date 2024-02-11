@@ -1,4 +1,4 @@
-Open [website](https://users.metropolia.fi/~danielvv/hybrid-week3/) to view it in the browser.
+Open [website](https://users.metropolia.fi/~danielvv/hooks/) to view it in the browser.
 
 # React + TypeScript + Vite
 
@@ -24,7 +24,7 @@ export default {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
