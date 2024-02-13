@@ -1,3 +1,12 @@
-import { User } from '../types/DBTypes';
+import { User, UserWithNoPassword } from '../types/DBTypes';
 type Credentials = Pick<User, 'username' | 'password'>;
-export type { Credentials };
+
+type AuthContextType = {
+  user: UserWithNoPassword | null;
+  handleLogin: (credentials: Credentials) => void;
+  handleLogout: () => void;
+  handleAutoLogin: () => void;
+};
+
+export type { Credentials, AuthContextType };
+
