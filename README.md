@@ -1,4 +1,4 @@
-Open [website](https://users.metropolia.fi/~danielvv/context/) to view it in the browser.
+Open [website](https://users.metropolia.fi/~danielvv/upload/) to view it in the browser.
 
 # React + TypeScript + Vite
 
