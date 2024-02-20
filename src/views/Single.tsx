@@ -9,20 +9,20 @@ const Single = () => {
 
   return (
     <>
-      <button onClick={() => navigate(-1)}>Close</button>
+      <button onClick={() => navigate(-1)} className="bg-slate-600 p-2 text-center hover:bg-slate-950">Close</button>
       <table>
         <tbody>
-          <tr>
-            <td>
-              {item.media_type === 'image/jpeg' && <img src={item.filename} alt={item.title} />}
-              {item.media_type === 'video/mp4' && <video controls src={item.filename} />}
+          <tr className="p-4">
+            <td className="flex items-center justify-center border border-slate-700">
+              {item.media_type === 'image/jpeg' && <img src={item.filename} alt={item.title} className="h-60 w-72 object-cover" />}
+              {item.media_type === 'video/mp4' && <video controls src={item.filename} className="h-60 w-72 object-cover"/>}
             </td>
-            <td>{item.title}</td>
-            <td>{item.description}</td>
-            <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
-            <td>{item.filesize}</td>
-            <td>{item.media_type}</td>
-            <td>{item.username}</td>
+            <td className="p-4">{item.title}</td>
+            <td className="p-4">{item.description}</td>
+            <td className="p-4">{new Date(item.created_at).toLocaleString('fi-FI')}</td>
+            <td className="p-4">{item.filesize}</td>
+            <td className="p-4">{item.media_type}</td>
+            <td className="p-4">{item.username}</td>
           </tr>
         </tbody>
       </table>

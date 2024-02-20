@@ -46,53 +46,58 @@ const Upload = () => {
 
   return (
     <>
-      <h1>Upload</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input
-            name="title"
-            type="text"
-            id="title"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <textarea
-            name="description"
-            rows={5}
-            id="description"
-            onChange={handleInputChange}
-          ></textarea>
-        </div>
-        <div>
-          <label htmlFor="file">File</label>
-          <input
-            name="file"
-            type="file"
-            id="file"
-            accept="image/*, video/*"
-            onChange={handleFileChange}
-          />
-        </div>
-        <img
-          src={
-            file
-              ? URL.createObjectURL(file)
-              : 'https://via.placeholder.com/200?text=Choose+image'
-          }
-          alt="preview"
-          width="200"
-        />
-        <button
-          type="submit"
-          disabled={file && inputs.title.length > 3 ? false : true}
-        >
-          Upload
-        </button>
-      </form>
-    </>
+      <h1 className="text-center">Upload</h1>
+<form onSubmit={handleSubmit} className="flex flex-col items-center justify-center">
+  <div className="flex flex-col w-4/5">
+    <label htmlFor="title" className="mt-2">Title</label>
+    <input
+      name="title"
+      type="text"
+      id="title"
+      onChange={handleInputChange}
+      className="mt-2 p-2 border border-gray-300 rounded"
+    />
+  </div>
+  <div className="flex flex-col w-4/5">
+    <label htmlFor="description" className="mt-2">Description</label>
+    <textarea
+      name="description"
+      rows={5}
+      id="description"
+      onChange={handleInputChange}
+      className="mt-2 p-2 border border-gray-300 rounded"
+    ></textarea>
+  </div>
+  <div className="flex flex-col w-4/5">
+    <label htmlFor="file" className="mt-2">File</label>
+    <input
+      name="file"
+      type="file"
+      id="file"
+      accept="image/*, video/*"
+      onChange={handleFileChange}
+      className="mt-2"
+    />
+  </div>
+  <img
+    src={
+      file
+        ? URL.createObjectURL(file)
+        : 'https://via.placeholder.com/200?text=Choose+image'
+    }
+    alt="preview"
+    width="200"
+    className="my-2 rounded"
+  />
+  <button
+    type="submit"
+    disabled={file && inputs.title.length > 3 ? false : true}
+    className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >
+    Upload
+  </button>
+</form>
+  </>
   );
 };
 
