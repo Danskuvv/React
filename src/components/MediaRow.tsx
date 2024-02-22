@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import {MediaItemWithOwner} from '../types/DBTypes';
 import { useUserContext } from '../hooks/ContextHooks';
+import Likes from './Likes';
 // src/components/MediaRow.tsx
 
 const MediaRow = (props: {item: MediaItemWithOwner, setSelectedItem: (item: MediaItemWithOwner) => void}) => {
@@ -23,6 +24,8 @@ const MediaRow = (props: {item: MediaItemWithOwner, setSelectedItem: (item: Medi
       <td className="p-4">{item.username}</td>
       <td>
         <Link to="/single" state={{item}} className="bg-slate-600 p-2 text-center hover:bg-slate-950">Show</Link>
+        <Likes item={item} />
+
 
         {user &&
           (user.user_id === item.user_id || user.level_name === 'Admin') && (

@@ -1,6 +1,7 @@
 import {useLocation, useNavigate} from "react-router-dom";
 //import {MediaItem} from "../types/DBTypes";
 import {MediaItemWithOwner} from "../types/DBTypes";
+import Likes from "../components/Likes";
 
 const Single = () => {
   const {state} = useLocation();
@@ -23,6 +24,7 @@ const Single = () => {
             <td className="p-4">{item.filesize}</td>
             <td className="p-4">{item.media_type}</td>
             <td className="p-4">{item.username}</td>
+            <Likes item={item}/>
           </tr>
         </tbody>
       </table>
