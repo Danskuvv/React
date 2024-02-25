@@ -1,4 +1,4 @@
-Open [website](https://users.metropolia.fi/~danielvv/likes/) to view it in the browser.
+Open [website](https://users.metropolia.fi/~danielvv/zustand/) to view it in the browser.
 
 # React + TypeScript + Vite
 
